@@ -136,7 +136,7 @@ ul {
 
 .cards {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
     gap: 10px;
     max-width: 1100px;
     margin: auto;
@@ -164,6 +164,7 @@ ul {
 .tasks {
     max-width: 100;
     /* margin:auto; */
+    flex-wrap: wrap;
     margin: 20px 20px 20px 20px;
     border: 1px solid var(--border-color);
     border-radius: 15px;
@@ -188,7 +189,8 @@ ul {
 }
 
 #task-input {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 35px;
     background-color: var(--card-color);
     border: 1px solid var(--border-color);
@@ -207,18 +209,19 @@ ul {
     height: 55px;
     width: 55px;
     border: none;
-    border-radius: 100%;
+    border-radius: 16px;
     font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    flex-shrink: 0;
 }
 
 #add-task:hover {
     border: 1px solid var(--border-color);
-    box-shadow: 0 0 5px white,
-        0 0 10px white,
+    box-shadow: 0 0 10px white,
         0 0 20px white,
-        0 0 30px white;
+        0 0 30px white,
+        0 0 40px white;
 }
 
 
@@ -251,11 +254,22 @@ ul {
     border-radius: 10px;
     margin: 20px 20px 5px 20px;
     transition: all 0.3s ease-in-out;
+    animation: taskAppear 0.3s ease;
+}
+@keyframes taskAppear {
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .task-item:hover {
-    transform: translateY(-2px);
-    background-color: #0056b3;
+    background-color: rgba(255,255,255,0.03);
+    transform: translateX(5px);
     cursor: pointer;
 }
 
@@ -274,8 +288,20 @@ ul {
 }
 
 .completed {
+    opacity: 0.6;
+    transform:scale(0.98);
+    transition: all 0.3s ease ;
     text-decoration: line-through;
-    opacity: 0.5;
+}
+
+.hero-button:hover,
+#add-task:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 8px 25px rgba(59,130,246,0.3);
+
 }
 
 #all-btn {
