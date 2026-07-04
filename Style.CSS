@@ -39,7 +39,7 @@
     transition: transform 0.3 ease;
 }
 #theme-btn:hover{
-    transform: translateY(-3px);
+    transform: translateY(-2.5px);
 }
 
 .card,
