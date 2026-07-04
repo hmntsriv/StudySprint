@@ -21,9 +21,6 @@ if (localStorage.getItem("tasks")) {
 
 
 // Task box with input
-
-
-
 // Create Task Function
 
 function createTask(taskObj) {
@@ -117,7 +114,7 @@ taskinput.addEventListener("keydown", function (event) {
         }
     }
 
-})
+});
 
 addbtn.addEventListener("click", function () {
 
@@ -137,7 +134,7 @@ addbtn.addEventListener("click", function () {
 
         localStorage.setItem("tasks", JSON.stringify(tasks));
 
-        createTask(textObj);
+        createTask(taskObj);
 
         taskinput.value = "";
 
@@ -241,3 +238,22 @@ pendingbtn.addEventListener("click", function () {
 
 
 });
+
+let themebtn = document.getElementById("theme-btn");
+let body = document.body;
+themebtn.addEventListener("click", function () {
+    body.classList.toggle("lightmode");
+    if (body.classList.contains("lightmode")) {
+        themebtn.textContent = "☀️";
+        localStorage.setItem("theme", "light");
+    }
+    else {
+        themebtn.textContent = "🌙";
+        localStorage.setItem("theme", "dark");
+    }
+});
+
+if (localStorage.getItem("theme") == "light") {
+    body.classList.add("lightmode");
+    themebtn.textContent = "☀️";
+}

@@ -1,6 +1,61 @@
+:root{
+    --bg-color: #0d1117;
+    --card-color: #161b22;
+    --text-color: #e6edf3;
+    --muted-color: #9ca3af;
+    --border-color: #263041;
+
+    --primary-color: #60a5fa;
+    --accent-color: #a78bfa;
+    --success-color: #34d399;
+    --warning-color: #fbbf24;
+    --danger-color: #f87171;
+}
+.lightmode{
+    --bg-color: #f7f8fa;
+    --card-color: #ffffff;
+    --text-color: #0f172a;
+    --muted-color: #6b7280;
+    --border-color: #e5e7eb;
+
+    --primary-color: #3b82f6;
+    --accent-color: #8b5cf6;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+}
+.lightmode body{
+    background: linear-gradient(
+        135deg,
+        #f9fafb,
+        #e5e7eb
+    );
+}
+#theme-btn{
+    background-color: transparent;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3 ease;
+}
+#theme-btn:hover{
+    transform: translateY(-3px);
+}
+
+.card,
+.tasks,
+#task-box,
+nav{
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
 body {
-    background-color: #0f172a;
-    color: white;
+    background-color: var(--bg-color);
+    background:
+    radial-gradient(circle at top left,
+    rgba(96,165,250,0.08),
+    transparent 30%),
+    var(--bg-color);
+    color: var(--text-color);
     font-family: 'Poppins';
     padding: 20px;
 
@@ -13,7 +68,7 @@ nav {
     align-items: center;
     max-width: 1400px;
     margin: auto;
-    border: 2px solid white;
+    border: 1px solid var(--border-color);
     border-radius: 15px;
     padding-left: 15px;
     padding-right: 15px;
@@ -42,13 +97,12 @@ ul {
 .hero-button {
     font-size: 18px;
     font-family: 'Poppins';
-    border: 2px solid white;
+    border: 1px solid var(--border-color);
     border-radius: 15px;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
-
-    background-color: #1e293b;
-    color: #f8fafc;
+    background-color: var(--card-color);
+    color: var(--text-color);
     margin-bottom: 50px;
     padding: 12px 20px;
 }
@@ -70,8 +124,8 @@ ul {
 }
 
 .card {
-    background-color: #1e293b;
-    border: 2px solid white;
+    background-color: var(--card-color);
+   border: 1px solid var(--border-color);
     border-radius: 15px;
     width: 250px;
     text-align: center;
@@ -92,7 +146,7 @@ ul {
     max-width: 100;
     /* margin:auto; */
     margin: 20px 20px 20px 20px;
-    border: 2px solid white;
+    border: 1px solid var(--border-color);
     border-radius: 15px;
     padding-left: 15px;
     padding-right: 15px;
@@ -110,15 +164,17 @@ ul {
 #task-input {
     width: 400px;
     height: 35px;
-    background-color: #1e293b;
-    border: 2px solid white;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
     border-radius: 15px;
     padding: 12px 20px;
     margin: auto;
     font-family: 'Poppins';
     font-size: 18px;
-    color: white;
-
+    color: var(--text-color);
+}
+#task-input::placeholder{
+    color: var(--muted-color);
 }
 
 #add-task {
@@ -132,7 +188,7 @@ ul {
 }
 
 #add-task:hover {
-    background-color: white;
+    border: 1px solid var(--border-color);
     box-shadow: 0 0 5px white,
         0 0 10px white,
         0 0 20px white,
@@ -154,7 +210,7 @@ ul {
 
 #task-box {
     min-height: 250px;
-    border: 2px solid white;
+    border: 1px solid var(--border-color);
     border-radius: 15px;
     margin: 20px 20px 20px 20px;
 
@@ -165,7 +221,7 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
-    border: 2px solid white;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     margin: 20px 20px 5px 20px;
     transition: all 0.3s ease-in-out;
@@ -198,9 +254,9 @@ ul {
 
 #all-btn {
     background-color: transparent;
-    border: white 2px solid;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
-    color: white;
+    color: var(--text-color);
     font-family: 'Poppins';
     font-size: 18px;
     margin: 20px 10px 10px 20px;
@@ -209,10 +265,10 @@ ul {
 
 #completed-btn {
     background-color: transparent;
-    border: white 2px solid;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     font-family: 'Poppins';
-    color: white;
+    color: var(--text-color);
     font-size: 18px;
     margin: 5px 10px 10px 5px;
     transition: all ease-in-out 0.3s;
@@ -220,10 +276,10 @@ ul {
 
 #pending-btn {
     background-color: transparent;
-    border: white 2px solid;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     font-family: 'Poppins';
-    color: white;
+    color: var(--text-color);
     font-size: 18px;
     margin: 5px 10px 10px 5px;
     transition: all ease-in-out 0.3s, background-color 0.3s ease;
