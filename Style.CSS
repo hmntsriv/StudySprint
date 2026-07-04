@@ -41,6 +41,25 @@
 #theme-btn:hover{
     transform: translateY(-2.5px);
 }
+#tasks-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#tskcounter{
+    margin-top: -10px;
+    font-size: 16px;
+    color: var(--muted-color);
+
+    background-color: rgba(99,102,241,0.12);
+
+    padding: 8px 14px;
+
+    border-radius: 12px;
+
+    width: fit-content;
+}
+
 
 .card,
 .tasks,
@@ -148,8 +167,9 @@ ul {
     margin: 20px 20px 20px 20px;
     border: 1px solid var(--border-color);
     border-radius: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    padding: 25px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -159,6 +179,12 @@ ul {
     font-size: 40px;
     font-weight: bold;
 
+}
+
+#input-wrapper{
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
 #task-input {
