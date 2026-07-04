@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySprint 🏃🏻‍♂️</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Playwrite+NZ+Basic:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="Script.JS" defer></script>
+</head>
+
+<body>
+    <nav>
+        <h1>StudySprint 🏃🏻‍♂️</h1>
+
+        <ul>
+            <li id="liveclock" style="font-size: 20px;font-weight: bold;align-items:center;"></li>--
+            <li style="font-size: 20px;font-weight: bold;align-items:center;">Dashboard</li>
+            <li style="font-size: 20px;font-weight: bold;align-items:center;">Goals</li>
+            <li style="font-size: 20px;font-weight: bold;align-items:center;">Stats</li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <div>
+            <p id="hero-head">"Organize your chaos."</p>
+            <p class="hero-bottomtext">Stay organized. Stay barely sane.</p>
+            <button class="hero-button">Start today ! </button>
+        </div>
+    </section>
+
+    <div class="cards">
+        <div class="card">
+            <h2>Study Hours</h2>
+            <p>4 Hours</p>
+        </div>
+        <div class="card">
+            <h2>Sleep</h2>
+            <p>3 hours</p>
+        </div>
+        <div class="card">
+            <h2>Assignments</h2>
+            <p>3 Pending</p>
+        </div>
+        <div class="card">
+            <h2>Coffeeee!!!!</h2>
+            <p>Infinite.</p>
+        </div>
+    </div>
+
+    <div class="taskcontainer">
+        <div class="tasks">
+            <h2 id="tasks-head">Today's Tasks</h2>
+            <p style="font-size: 15px" id="tskcounter">0 Tasks remaining !</p>
+            <div id="input-wrapper">
+                <input type="text" placeholder="What's pending ?" id="task-input">&nbsp;&nbsp;&nbsp;&nbsp;  
+                <button id="add-task">+</button>
+            </div>
+        </div>
+        <div id="task-box">
+            <button id="all-btn">All</button>
+            <button id="completed-btn">Completed</button>
+            <button id="pending-btn">Pending</button>
+            <p id="empty-msg">Nothing's pending ? suspicious...</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
