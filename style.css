@@ -1,4 +1,4 @@
-:root{
+:root {
     --bg-color: #0d1117;
     --card-color: #161b22;
     --text-color: #e6edf3;
@@ -11,7 +11,8 @@
     --warning-color: #fbbf24;
     --danger-color: #f87171;
 }
-.lightmode{
+
+.lightmode {
     --bg-color: #f7f8fa;
     --card-color: #ffffff;
     --text-color: #0f172a;
@@ -24,34 +25,37 @@
     --warning-color: #f59e0b;
     --danger-color: #ef4444;
 }
-.lightmode body{
-    background: linear-gradient(
-        135deg,
-        #f9fafb,
-        #e5e7eb
-    );
+
+.lightmode body {
+    background: linear-gradient(135deg,
+            #f9fafb,
+            #e5e7eb);
 }
-#theme-btn{
+
+#theme-btn {
     background-color: transparent;
     font-size: 18px;
     border: none;
     cursor: pointer;
     transition: transform 0.3 ease;
 }
-#theme-btn:hover{
+
+#theme-btn:hover {
     transform: translateY(-2.5px);
 }
-#tasks-left{
+
+#tasks-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-#tskcounter{
+
+#tskcounter {
     margin-top: -10px;
     font-size: 16px;
     color: var(--muted-color);
 
-    background-color: rgba(99,102,241,0.12);
+    background-color: rgba(99, 102, 241, 0.12);
 
     padding: 8px 14px;
 
@@ -64,16 +68,17 @@
 .card,
 .tasks,
 #task-box,
-nav{
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+nav {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
+
 body {
     background-color: var(--bg-color);
     background:
-    radial-gradient(circle at top left,
-    rgba(96,165,250,0.08),
-    transparent 30%),
-    var(--bg-color);
+        radial-gradient(circle at top left,
+            rgba(96, 165, 250, 0.08),
+            transparent 30%),
+        var(--bg-color);
     color: var(--text-color);
     font-family: 'Poppins';
     padding: 20px;
@@ -136,7 +141,7 @@ ul {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 10px;
     max-width: 1100px;
     margin: auto;
@@ -144,7 +149,7 @@ ul {
 
 .card {
     background-color: var(--card-color);
-   border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: 15px;
     width: 250px;
     text-align: center;
@@ -182,10 +187,10 @@ ul {
 
 }
 
-#input-wrapper{
-    display:flex;
-    align-items:center;
-    gap:15px;
+#input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 #task-input {
@@ -201,7 +206,8 @@ ul {
     font-size: 18px;
     color: var(--text-color);
 }
-#task-input::placeholder{
+
+#task-input::placeholder {
     color: var(--muted-color);
 }
 
@@ -256,19 +262,21 @@ ul {
     transition: all 0.3s ease-in-out;
     animation: taskAppear 0.3s ease;
 }
+
 @keyframes taskAppear {
-    from{
-        opacity:0;
-        transform:translateY(10px);
+    from {
+        opacity: 0;
+        transform: translateY(10px);
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 .task-item:hover {
-    background-color: rgba(255,255,255,0.03);
+    background-color: rgba(255, 255, 255, 0.03);
     transform: translateX(5px);
     cursor: pointer;
 }
@@ -289,18 +297,18 @@ ul {
 
 .completed {
     opacity: 0.6;
-    transform:scale(0.98);
-    transition: all 0.3s ease ;
+    transform: scale(0.98);
+    transition: all 0.3s ease;
     text-decoration: line-through;
 }
 
 .hero-button:hover,
-#add-task:hover{
+#add-task:hover {
 
-    transform:translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
-    0 8px 25px rgba(59,130,246,0.3);
+        0 8px 25px rgba(59, 130, 246, 0.3);
 
 }
 
@@ -358,40 +366,60 @@ ul {
     cursor: pointer;
 }
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-    nav{
+    nav {
         flex-direction: column;
-        gap:20px;
-        padding:20px;
+        gap: 20px;
+        padding: 20px;
     }
-    ul{
+
+    nav li {
+        font-size: 14px;
+    }
+
+    #liveclock {
+        font-size: 18px;
+    }
+
+    ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap:20px;
+        gap: 12px;
         padding: 0;
     }
-    .cards{
+
+    .cards {
+        justify-items: center;
         grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 320px;
     }
-    .tasks{
-        flex-direction:column;
+
+    .tasks {
+        flex-direction: column;
         align-items: flex-start;
         gap: 25px;
     }
-    #input-wrapper{
+
+    #input-wrapper {
         width: 100%;
     }
-    #task-input{
+
+    #task-input {
         width: 100%;
+        flex:1;
     }
-    #hero-head{
-        font-size:28px;
+
+    #hero-head {
+        font-size: 28px;
     }
-    #tskcounter{
+
+    #tskcounter {
         font-size: 14px;
     }
-    body{
-        padding:10px;
+
+    body {
+        padding: 10px;
     }
 }
