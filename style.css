@@ -366,6 +366,34 @@ ul {
     cursor: pointer;
 }
 
+#stats-card{
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    margin: 20px 20px 20px 20px;
+    padding: 25px;
+
+}
+.progress-bar{
+    width: 100%;
+    overflow: hidden;
+    height: 16px;
+    border-radius:20px;
+    margin-top:15px;
+    background-color: rgba(255,255,255,0.08);
+}
+#progress-fill{
+
+    width:0%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        #60a5fa,
+        #a78bfa
+    );
+    border-radius:20px;
+    transition:width 0.3s ease;
+}
 @media(max-width:768px) {
 
     nav {

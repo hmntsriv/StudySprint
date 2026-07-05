@@ -19,8 +19,6 @@ if (localStorage.getItem("tasks")) {
     tasks = [];
 }
 
-
-// Task box with input
 // Create Task Function
 
 function createTask(taskObj) {
@@ -61,12 +59,14 @@ function createTask(taskObj) {
         });
 
         updateCounter();
+        updateProgress();
 
         localStorage.setItem("tasks", JSON.stringify(tasks));
 
         if (document.querySelectorAll(".task-item").length == 0) {
             emptymsg.style.display = "block";
             updateCounter();
+            updateProgress();
         }
 
     });
@@ -77,10 +77,12 @@ function createTask(taskObj) {
         taskObj.completed = !taskObj.completed;
         taskdiv.classList.toggle("completed");
         localStorage.setItem("tasks", JSON.stringify(tasks));
+        updateProgress();
     });
     updateCounter();
+    
 }
-
+//Counter update
 function updateCounter() {
     let counter = document.getElementById("tskcounter");
     let tasklen = tasks.length + " Task remaining !"
@@ -88,15 +90,14 @@ function updateCounter() {
 }
 
 
-
-// Add Button
-taskinput.addEventListener("keydown", function (event) {
+// Add task
+function addTask(){
     let text = taskinput.value;
     let taskObj = {
         text: text,
         completed: false
     };
-    if (event.key == "Enter") {
+    
         if (text == "") {
             window.alert("type something you stoopid!");
         }
@@ -108,38 +109,20 @@ taskinput.addEventListener("keydown", function (event) {
             localStorage.setItem("tasks", JSON.stringify(tasks));
 
             createTask(taskObj);
-
+            updateProgress();
             taskinput.value = "";
 
         }
     }
 
+taskinput.addEventListener("keydown", function (event) {
+    if (event.key == "Enter") {
+        addTask();
+    }
 });
 
 addbtn.addEventListener("click", function () {
-
-    let text = taskinput.value;
-    let taskObj = {
-        text: text,
-        completed: false
-    };
-
-    if (text == "") {
-        window.alert("type something you stoopid!");
-    }
-
-    else {
-
-        tasks.push(taskObj);
-
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-
-        createTask(taskObj);
-
-        taskinput.value = "";
-
-    }
-
+    addTask();
 });
 
 
@@ -161,8 +144,6 @@ else if (hour >= 12 && hour < 17) {
 else {
     heading.textContent = "Good Night🌙, " + name + " !";
 }
-
-
 
 function updateClock() {
 
@@ -193,13 +174,10 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 
-
+// Filter Buttons
 let allbtn = document.getElementById("all-btn");
 let completedbtn = document.getElementById("completed-btn");
 let pendingbtn = document.getElementById("pending-btn");
-
-
-
 
 allbtn.addEventListener("click", function () {
     let alltasks = document.querySelectorAll(".task-item");
@@ -239,6 +217,8 @@ pendingbtn.addEventListener("click", function () {
 
 });
 
+// Light/dark mode switch
+
 let themebtn = document.getElementById("theme-btn");
 let body = document.body;
 themebtn.addEventListener("click", function () {
@@ -256,4 +236,19 @@ themebtn.addEventListener("click", function () {
 if (localStorage.getItem("theme") == "light") {
     body.classList.add("lightmode");
     themebtn.textContent = "☀️";
+}
+
+// Progress bar
+function updateProgress(){
+    let progresstxt = document.getElementById("progresstxt")
+    let progressfill = document.getElementById("progress-fill")
+    let completedTasks = tasks.filter(function(task){
+        return task.completed;
+    })
+    let progressPercent = (completedTasks.length)/(tasks.length)*100;
+    if (tasks.length == 0){
+        progressPercent = 0;
+    }
+    progresstxt.textContent = Math.round(progressPercent) + "% Completed";
+    progressfill.style.width = progressPercent + "%";
 }

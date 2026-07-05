@@ -60,12 +60,12 @@
     <div class="taskcontainer">
         <div class="tasks">
             <div class="tasks-left">
-        <h2 id="tasks-head">Today's Tasks</h2>
-            <p id="tskcounter">0 Tasks remaining !</p>
+                <h2 id="tasks-head">Today's Tasks</h2>
+                <p id="tskcounter">0 Tasks remaining !</p>
             </div>
 
             <div id="input-wrapper">
-                <input type="text" placeholder="What's pending ?" id="task-input">&nbsp;&nbsp;&nbsp;&nbsp;  
+                <input type="text" placeholder="What's pending ?" id="task-input">&nbsp;&nbsp;&nbsp;&nbsp;
                 <button id="add-task">＋</button>
             </div>
         </div>
@@ -74,6 +74,13 @@
             <button id="completed-btn">Completed</button>
             <button id="pending-btn">Pending</button>
             <p id="empty-msg">Nothing's pending ? suspicious...</p>
+        </div>
+    </div>
+    <div id="stats-card">
+        <h3>Progress</h3>
+        <p id="progresstxt">0% Completed</p>
+        <div class="progress-bar">
+            <div id="progress-fill"></div>
         </div>
     </div>
 
