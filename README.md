@@ -38,12 +38,17 @@ It helps users manage daily tasks with a clean responsive interface, progress tr
 
 ## 📸 Screenshots
 
-![StudySprint Dark mode Screenshot 1](#1.png)
-![StudySprint Dark mode Screenshot 2](#2.png)
-![StudySprint Dark mode Screenshot 3](#3.png)
-![StudySprint Dark mode Screenshot 4](#4.png)
-![StudySprint Light mode Screenshot 1](#5.png)
-![StudySprint Light mode Screenshot 2](#6.png)
+![StudySprint Dark mode Screenshot 1](assets/1.png)
+
+![StudySprint Dark mode Screenshot 2](assets/2.png)
+
+![StudySprint Dark mode Screenshot 3](assets/3.png)
+
+![StudySprint Dark mode Screenshot 4](assets/4.png)
+
+![StudySprint Light mode Screenshot 1](assets/5.png)
+
+![StudySprint Light mode Screenshot 2](assets/6.png)
 
 ---
 
