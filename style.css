@@ -118,7 +118,7 @@ ul {
     line-height: 1;
 }
 
-.hero-button {
+#hero-button {
     font-size: 18px;
     font-family: 'Poppins';
     border: 1px solid var(--border-color);
@@ -131,10 +131,11 @@ ul {
     padding: 12px 20px;
 }
 
-.hero-button:hover {
+#hero-button:hover {
     /*transform: translateY(-4px) rotate(1deg); --- Alternate animation */
     transform: translateY(-5px);
     background-color: #0056b3;
+    box-shadow:0 8px 25px rgba(59,130,246,0.25);
 }
 
 /* Cards */
@@ -345,6 +346,16 @@ ul {
     transition: all ease-in-out 0.3s, background-color 0.3s ease;
 }
 
+#clearall-btn{
+        background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-family: 'Poppins';
+    color: var(--text-color);
+    font-size: 18px;
+    margin: 5px 10px 10px 5px;
+    transition: all ease-in-out 0.3s, background-color 0.3s ease;
+}
 #all-btn:hover {
     transform: translateY(-5px);
     background-color: #0056b3;
@@ -366,6 +377,11 @@ ul {
     cursor: pointer;
 }
 
+#clearall-btn:hover{
+    transform: translateY(-5px);
+    background-color: #0056b3;
+    cursor: pointer;
+}
 #stats-card{
     background-color: var(--card-color);
     border: 1px solid var(--border-color);
@@ -420,6 +436,8 @@ ul {
     .cards {
         justify-items: center;
         grid-template-columns: 1fr;
+    }
+    .card{
         width: 100%;
         max-width: 320px;
     }

@@ -13,6 +13,9 @@ if (localStorage.getItem("tasks")) {
 
     tasks.forEach(function (task) {
         createTask(task);
+        updateProgress();
+        updateCounter();
+        updateStats();
     });
 
 } else {
@@ -29,7 +32,7 @@ function createTask(taskObj) {
     let delbtn = document.createElement("button");
     newTask.textContent = taskObj.text;
     if (taskObj.completed) {
-        taskdiv.classList.add("completed")
+        newTask.classList.add("completed")
     }
 
     delbtn.textContent = "❌";
@@ -60,6 +63,7 @@ function createTask(taskObj) {
 
         updateCounter();
         updateProgress();
+        updateStats();
 
         localStorage.setItem("tasks", JSON.stringify(tasks));
 
@@ -67,6 +71,7 @@ function createTask(taskObj) {
             emptymsg.style.display = "block";
             updateCounter();
             updateProgress();
+            updateStats();
         }
 
     });
@@ -78,9 +83,11 @@ function createTask(taskObj) {
         taskdiv.classList.toggle("completed");
         localStorage.setItem("tasks", JSON.stringify(tasks));
         updateProgress();
+        updateStats();
     });
     updateCounter();
-    
+
+
 }
 //Counter update
 function updateCounter() {
@@ -91,29 +98,30 @@ function updateCounter() {
 
 
 // Add task
-function addTask(){
+function addTask() {
     let text = taskinput.value;
     let taskObj = {
         text: text,
         completed: false
     };
-    
-        if (text == "") {
-            window.alert("type something you stoopid!");
-        }
 
-        else {
-
-            tasks.push(taskObj);
-
-            localStorage.setItem("tasks", JSON.stringify(tasks));
-
-            createTask(taskObj);
-            updateProgress();
-            taskinput.value = "";
-
-        }
+    if (text == "") {
+        window.alert("type something you stoopid!");
     }
+
+    else {
+
+        tasks.push(taskObj);
+
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+
+        createTask(taskObj);
+        updateProgress();
+        updateStats();
+        taskinput.value = "";
+
+    }
+}
 
 taskinput.addEventListener("keydown", function (event) {
     if (event.key == "Enter") {
@@ -131,7 +139,16 @@ addbtn.addEventListener("click", function () {
 
 let hour = new Date().getHours();
 
-let name = "Hemant";
+// let name = "Hemant";
+
+let name;
+if (localStorage.getItem("username")) {
+    name = localStorage.getItem("username");
+}
+else {
+    name = prompt("What should we call you ?");
+    localStorage.setItem("username", name);
+}
 
 let heading = document.getElementById("hero-head");
 
@@ -239,16 +256,76 @@ if (localStorage.getItem("theme") == "light") {
 }
 
 // Progress bar
-function updateProgress(){
+function updateProgress() {
     let progresstxt = document.getElementById("progresstxt")
     let progressfill = document.getElementById("progress-fill")
-    let completedTasks = tasks.filter(function(task){
+    let completedTasks = tasks.filter(function (task) {
         return task.completed;
     })
-    let progressPercent = (completedTasks.length)/(tasks.length)*100;
-    if (tasks.length == 0){
+    let progressPercent = (completedTasks.length) / (tasks.length) * 100;
+    if (tasks.length == 0) {
         progressPercent = 0;
     }
     progresstxt.textContent = Math.round(progressPercent) + "% Completed";
     progressfill.style.width = progressPercent + "%";
 }
+
+//Update stats inside cards function
+
+function updateStats() {
+    let totaltask = document.getElementById("totaltask");
+
+    let completedtask = document.getElementById("completedtask");
+
+    let pendingtask = document.getElementById("pendingtask");
+
+    let progress = document.getElementById("progress");
+
+    let total = tasks.length;
+
+    let completed = tasks.filter(function (task) {
+        return task.completed;
+    }).length
+
+    let pending = total - completed;
+
+    let percent = 0;
+
+    if (total > 0) {
+        percent = Math.round((completed / total) * 100);
+    }
+
+    totaltask.textContent = total;
+
+    completedtask.textContent = completed;
+
+    pendingtask.textContent = pending;
+
+    progress.textContent = percent + "%";
+}
+
+let clearallbtn = document.getElementById("clearall-btn");
+
+clearallbtn.addEventListener("click", function () {
+    let confirmClear = confirm("Delete all tasks ?");
+    let emptymsg = document.getElementById("empty-msg")
+    if (confirmClear) {
+        tasks = [];
+        localStorage.removeItem("tasks");
+        let alltasks = document.querySelectorAll(".task-item");
+        alltasks.forEach(function (task) {
+            task.remove();
+        })
+        emptymsg.style.display = "block";
+        updateCounter();
+        updateProgress();
+        updateStats();
+    }
+});
+
+let herobtn = document.getElementById("hero-button");
+
+herobtn.addEventListener("click", function () {
+    taskinput.focus();
+});
+
