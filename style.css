@@ -1,471 +1,459 @@
 :root {
-    --bg-color: #0d1117;
-    --card-color: #161b22;
-    --text-color: #e6edf3;
-    --muted-color: #9ca3af;
-    --border-color: #263041;
+  --bg-color: #0d1117;
+  --card-color: #161b22;
+  --text-color: #e6edf3;
+  --muted-color: #9ca3af;
+  --border-color: #263041;
 
-    --primary-color: #60a5fa;
-    --accent-color: #a78bfa;
-    --success-color: #34d399;
-    --warning-color: #fbbf24;
-    --danger-color: #f87171;
+  --primary-color: #60a5fa;
+  --accent-color: #a78bfa;
+  --success-color: #34d399;
+  --warning-color: #fbbf24;
+  --danger-color: #f87171;
 }
 
 .lightmode {
-    --bg-color: #f7f8fa;
-    --card-color: #ffffff;
-    --text-color: #0f172a;
-    --muted-color: #6b7280;
-    --border-color: #e5e7eb;
+  --bg-color: #f7f8fa;
+  --card-color: #ffffff;
+  --text-color: #0f172a;
+  --muted-color: #6b7280;
+  --border-color: #e5e7eb;
 
-    --primary-color: #3b82f6;
-    --accent-color: #8b5cf6;
-    --success-color: #10b981;
-    --warning-color: #f59e0b;
-    --danger-color: #ef4444;
+  --primary-color: #3b82f6;
+  --accent-color: #8b5cf6;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
 }
 
 .lightmode body {
-    background: linear-gradient(135deg,
-            #f9fafb,
-            #e5e7eb);
+  background: linear-gradient(135deg, #f9fafb, #e5e7eb);
 }
 
 #theme-btn {
-    background-color: transparent;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3 ease;
+  background-color: transparent;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3 ease;
 }
 
 #theme-btn:hover {
-    transform: translateY(-2.5px);
+  transform: translateY(-2.5px);
 }
 
 #tasks-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #tskcounter {
-    margin-top: -10px;
-    font-size: 16px;
-    color: var(--muted-color);
-
-    background-color: rgba(99, 102, 241, 0.12);
-
-    padding: 8px 14px;
-
-    border-radius: 12px;
-
-    width: fit-content;
+  margin-top: -10px;
+  font-size: 16px;
+  color: var(--muted-color);
+  background-color: rgba(99, 102, 241, 0.12);
+  padding: 8px 14px;
+  border-radius: 12px;
+  width: fit-content;
 }
-
 
 .card,
 .tasks,
 #task-box,
 nav {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 body {
-    background-color: var(--bg-color);
-    background:
-        radial-gradient(circle at top left,
-            rgba(96, 165, 250, 0.08),
-            transparent 30%),
-        var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Poppins';
-    padding: 20px;
-
+  background-color: var(--bg-color);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(96, 165, 250, 0.08),
+      transparent 30%
+    ),
+    var(--bg-color);
+  color: var(--text-color);
+  font-family: "Poppins";
+  padding: 20px;
 }
 
 /* Navbar */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1400px;
-    margin: auto;
-    border: 1px solid var(--border-color);
-    border-radius: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 ul {
-    display: flex;
-    gap: 50px;
-    list-style-type: none;
+  display: flex;
+  gap: 50px;
+  list-style-type: none;
 }
 
 /* Hero Section */
 #hero-head {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 10px;
-
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .hero-bottomtext {
-    font-size: 20px;
-    margin-bottom: 20px;
-    line-height: 1;
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 1;
 }
 
 #hero-button {
-    font-size: 18px;
-    font-family: 'Poppins';
-    border: 1px solid var(--border-color);
-    border-radius: 15px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    background-color: var(--card-color);
-    color: var(--text-color);
-    margin-bottom: 50px;
-    padding: 12px 20px;
+  font-size: 18px;
+  font-family: "Poppins";
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+  background-color: var(--card-color);
+  color: var(--text-color);
+  margin-bottom: 50px;
+  padding: 12px 20px;
 }
 
 #hero-button:hover {
-    /*transform: translateY(-4px) rotate(1deg); --- Alternate animation */
-    transform: translateY(-5px);
-    background-color: #0056b3;
-    box-shadow:0 8px 25px rgba(59,130,246,0.25);
+  /*transform: translateY(-4px) rotate(1deg); --- Alternate animation */
+  transform: translateY(-5px);
+  background-color: #0056b3;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25);
 }
 
 /* Cards */
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 10px;
-    max-width: 1100px;
-    margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .card {
-    background-color: var(--card-color);
-    border: 1px solid var(--border-color);
-    border-radius: 15px;
-    width: 250px;
-    text-align: center;
-    line-height: 1;
-    padding: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    margin-bottom: 70px;
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+  line-height: 1;
+  padding: 10px;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+  margin-bottom: 70px;
 }
 
 .card:hover {
-    /*transform: translateY(-4px) rotate(1deg); --- Alternate animation */
-    transform: translateY(-5px);
-    background-color: #0056b3;
+  /*transform: translateY(-4px) rotate(1deg); --- Alternate animation */
+  transform: translateY(-5px);
+  background-color: #0056b3;
 }
 
 /* Tasks */
 .tasks {
-    max-width: 100;
-    /* margin:auto; */
-    flex-wrap: wrap;
-    margin: 20px 20px 20px 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 15px;
-    /* padding-left: 15px;
+  max-width: 100;
+  /* margin:auto; */
+  flex-wrap: wrap;
+  margin: 20px 20px 20px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  /* padding-left: 15px;
     padding-right: 15px; */
-    padding: 25px 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 25px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #tasks-head {
-    font-size: 40px;
-    font-weight: bold;
-
+  font-size: 40px;
+  font-weight: bold;
 }
 
 #input-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 #task-input {
-    width: 100%;
-    max-width: 400px;
-    height: 35px;
-    background-color: var(--card-color);
-    border: 1px solid var(--border-color);
-    border-radius: 15px;
-    padding: 12px 20px;
-    margin: auto;
-    font-family: 'Poppins';
-    font-size: 18px;
-    color: var(--text-color);
+  width: 100%;
+  max-width: 400px;
+  height: 35px;
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  padding: 12px 20px;
+  margin: auto;
+  font-family: "Poppins";
+  font-size: 18px;
+  color: var(--text-color);
 }
 
 #task-input::placeholder {
-    color: var(--muted-color);
+  color: var(--muted-color);
 }
 
 #add-task {
-    height: 55px;
-    width: 55px;
-    border: none;
-    border-radius: 16px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    flex-shrink: 0;
+  height: 55px;
+  width: 55px;
+  border: none;
+  border-radius: 16px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  flex-shrink: 0;
 }
 
 #add-task:hover {
-    border: 1px solid var(--border-color);
-    box-shadow: 0 0 10px white,
-        0 0 20px white,
-        0 0 30px white,
-        0 0 40px white;
+  border: 1px solid var(--border-color);
+  box-shadow:
+    0 0 10px white,
+    0 0 20px white,
+    0 0 30px white,
+    0 0 40px white;
 }
 
-
 .taskcontainer {
-    /* border: #f8fafc solid 2px; */
-    border-radius: 15px;
-    margin: auto;
-
+  /* border: #f8fafc solid 2px; */
+  border-radius: 15px;
+  margin: auto;
 }
 
 #empty-msg {
-    text-align: center;
-    margin-top: 3.5%;
+  text-align: center;
+  margin-top: 3.5%;
 }
 
 #task-box {
-    min-height: 250px;
-    border: 1px solid var(--border-color);
-    border-radius: 15px;
-    margin: 20px 20px 20px 20px;
-
+  min-height: 250px;
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  margin: 20px 20px 20px 20px;
 }
 
 .task-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    margin: 20px 20px 5px 20px;
-    transition: all 0.3s ease-in-out;
-    animation: taskAppear 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  margin: 20px 20px 5px 20px;
+  transition: all 0.3s ease-in-out;
+  animation: taskAppear 0.3s ease;
 }
 
 @keyframes taskAppear {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .task-item:hover {
-    background-color: rgba(255, 255, 255, 0.03);
-    transform: translateX(5px);
-    cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.03);
+  transform: translateX(5px);
+  cursor: pointer;
 }
 
 .delbtn {
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 .delbtn:hover {
-    transform: translateY(-5px);
-    cursor: pointer;
+  transform: translateY(-5px);
+  cursor: pointer;
 }
 
 .completed {
-    opacity: 0.6;
-    transform: scale(0.98);
-    transition: all 0.3s ease;
-    text-decoration: line-through;
+  opacity: 0.6;
+  transform: scale(0.98);
+  transition: all 0.3s ease;
+  text-decoration: line-through;
 }
 
 .hero-button:hover,
 #add-task:hover {
+  transform: translateY(-3px);
 
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 25px rgba(59, 130, 246, 0.3);
-
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
 }
 
 #all-btn {
-    background-color: transparent;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    color: var(--text-color);
-    font-family: 'Poppins';
-    font-size: 18px;
-    margin: 20px 10px 10px 20px;
-    transition: all ease-in-out 0.3s;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-color);
+  font-family: "Poppins";
+  font-size: 18px;
+  margin: 20px 10px 10px 20px;
+  transition: all ease-in-out 0.3s;
 }
 
 #completed-btn {
-    background-color: transparent;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    font-family: 'Poppins';
-    color: var(--text-color);
-    font-size: 18px;
-    margin: 5px 10px 10px 5px;
-    transition: all ease-in-out 0.3s;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-family: "Poppins";
+  color: var(--text-color);
+  font-size: 18px;
+  margin: 5px 10px 10px 5px;
+  transition: all ease-in-out 0.3s;
 }
 
 #pending-btn {
-    background-color: transparent;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    font-family: 'Poppins';
-    color: var(--text-color);
-    font-size: 18px;
-    margin: 5px 10px 10px 5px;
-    transition: all ease-in-out 0.3s, background-color 0.3s ease;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-family: "Poppins";
+  color: var(--text-color);
+  font-size: 18px;
+  margin: 5px 10px 10px 5px;
+  transition:
+    all ease-in-out 0.3s,
+    background-color 0.3s ease;
 }
 
-#clearall-btn{
-        background-color: transparent;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    font-family: 'Poppins';
-    color: var(--text-color);
-    font-size: 18px;
-    margin: 5px 10px 10px 5px;
-    transition: all ease-in-out 0.3s, background-color 0.3s ease;
+#clearall-btn {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-family: "Poppins";
+  color: var(--text-color);
+  font-size: 18px;
+  margin: 5px 10px 10px 5px;
+  transition:
+    all ease-in-out 0.3s,
+    background-color 0.3s ease;
 }
 #all-btn:hover {
-    transform: translateY(-5px);
-    background-color: #0056b3;
+  transform: translateY(-5px);
+  background-color: #0056b3;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #completed-btn:hover {
-    transform: translateY(-5px);
-    background-color: #0056b3;
+  transform: translateY(-5px);
+  background-color: #0056b3;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #pending-btn:hover {
-    transform: translateY(-5px);
-    background-color: #0056b3;
+  transform: translateY(-5px);
+  background-color: #0056b3;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
-#clearall-btn:hover{
-    transform: translateY(-5px);
-    background-color: #0056b3;
-    cursor: pointer;
+#clearall-btn:hover {
+  transform: translateY(-5px);
+  background-color: #0056b3;
+  cursor: pointer;
 }
-#stats-card{
-    background-color: var(--card-color);
-    border: 1px solid var(--border-color);
-    border-radius: 15px;
-    margin: 20px 20px 20px 20px;
-    padding: 25px;
+#stats-card {
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  margin: 20px 20px 20px 20px;
+  padding: 25px;
+}
+.progress-bar {
+  width: 100%;
+  overflow: hidden;
+  height: 16px;
+  border-radius: 20px;
+  margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+#progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
 
-}
-.progress-bar{
+  nav li {
+    font-size: 14px;
+  }
+
+  #liveclock {
+    font-size: 18px;
+  }
+
+  ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .cards {
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
+  .card {
     width: 100%;
-    overflow: hidden;
-    height: 16px;
-    border-radius:20px;
-    margin-top:15px;
-    background-color: rgba(255,255,255,0.08);
-}
-#progress-fill{
+    max-width: 320px;
+  }
 
-    width:0%;
-    height:100%;
-    background:linear-gradient(
-        90deg,
-        #60a5fa,
-        #a78bfa
-    );
-    border-radius:20px;
-    transition:width 0.3s ease;
-}
-@media(max-width:768px) {
+  .tasks {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
 
-    nav {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
+  #input-wrapper {
+    width: 100%;
+  }
 
-    nav li {
-        font-size: 14px;
-    }
+  #task-input {
+    width: 100%;
+    flex: 1;
+  }
 
-    #liveclock {
-        font-size: 18px;
-    }
+  #hero-head {
+    font-size: 28px;
+  }
 
-    ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        padding: 0;
-    }
+  #tskcounter {
+    font-size: 14px;
+  }
 
-    .cards {
-        justify-items: center;
-        grid-template-columns: 1fr;
-    }
-    .card{
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .tasks {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 25px;
-    }
-
-    #input-wrapper {
-        width: 100%;
-    }
-
-    #task-input {
-        width: 100%;
-        flex:1;
-    }
-
-    #hero-head {
-        font-size: 28px;
-    }
-
-    #tskcounter {
-        font-size: 14px;
-    }
-
-    body {
-        padding: 10px;
-    }
+  body {
+    padding: 10px;
+  }
 }
